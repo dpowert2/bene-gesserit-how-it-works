@@ -417,7 +417,7 @@ body {
       <text x="40" y="186" font-size="10" fill="#9CA3AF">Append to discovery log</text>
 
       <!-- Feedback loop arrow from Report back to Human -->
-      <path d="M 130 200 L 130 240" fill="none" stroke="#E84B3C" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arr)"/>
+      <path d="M 130 200 L 130 240" stroke="#E84B3C" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arr)"/>
 
       <!-- Human node -->
       <rect x="20" y="244" width="720" height="56" rx="12" fill="#E84B3C"/>
@@ -595,6 +595,15 @@ body {
 
   <h3>Preference learning</h3>
   <p>Every vote (1-5 stars) updates a <code>preferences.md</code> file — a structured record of what the system has learned about the decision-maker's tastes. Upvotes generate positive signals with point bonuses. Downvotes generate negative signals with point penalties. Neutral votes are tracked as ambiguous signals requiring further calibration. The preferences file feeds directly into the scoring algorithm — startups in subsequent scans are scored against these learned preferences, not just against the static thesis.</p>
+
+  <h3>Exposure normalisation</h3>
+  <p>Raw vote counts are misleading. If the radar surfaces 20 compliance startups and 4 agent-auth startups, and 3 get upvoted in each category, the naive signal is "equal interest." But the real signal is a 15% hit rate for compliance vs. 75% for agent-auth — a five-to-one preference that raw counts completely obscure.</p>
+  <p>The learning system normalises all preference signals by exposure — the number of startups surfaced per category, not just the number voted on. Categories are ranked by <strong>hit rate</strong> (upvotes ÷ exposures) and <strong>rejection rate</strong> (downvotes ÷ exposures), not by absolute volume. This prevents high-volume categories from drowning out genuine preferences in low-volume ones.</p>
+
+  <h3>Thesis anchoring</h3>
+  <p>Exposure normalisation solves the volume problem but introduces a new risk: the system could still drift away from the stated investment thesis if vote patterns happen to diverge from strategic intent. The thesis anchoring mechanism prevents this.</p>
+  <p>After computing normalised preferences, the system cross-references the results against the thesis priority map. Three outcomes are possible. <strong>Aligned</strong>: vote signal confirms a thesis priority — the system boosts confidence. <strong>Divergent</strong>: a non-thesis category is rising in the rankings — the system flags it as "volume-driven, not yet thesis-confirmed" and holds the score weight steady until the decision-maker explicitly confirms it. <strong>Data-starved</strong>: a thesis priority has little or no vote data — the system flags it as needing votes rather than letting it silently lose rank.</p>
+  <p>The net effect: the system learns from behaviour but doesn't overwrite strategy. Only an explicit human signal — a direct vote pattern with high hit rate <em>and</em> supporting vote notes, or a thesis feedback override — can shift the scoring weights away from the stated thesis.</p>
 
   <h3>Near-miss analysis</h3>
   <p>The most informative data points aren't the obvious hits or obvious misses — they're the <strong>near misses</strong>. A near miss is a startup that scored above 60 on the relevance model but received a downvote (2 stars or below). These are the cases where the system was confidently wrong, and they reveal what the model is getting wrong.</p>
