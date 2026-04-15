@@ -354,7 +354,7 @@ body {
      ════════════════════════════════════════════ -->
 <div class="section">
   <div class="section-number">02 — The Architecture</div>
-  <h2>Seven phases, strict dependency order</h2>
+  <h2>Six phases, strict dependency order</h2>
   <p>Bene Gesserit runs as a single orchestrated pipeline where each phase's output feeds the next. Nothing runs out of order. The system can be triggered manually or on a schedule — either way, the phases execute in strict sequence, ensuring the radar never runs with stale search terms and the thesis never updates without the latest vote data.</p>
 
   <div class="diagram-wrap">
@@ -365,102 +365,92 @@ body {
         </marker>
       </defs>
 
-      <!-- Phase 0: AUDIT -->
-      <rect x="20" y="20" width="220" height="72" rx="12" fill="#2C1C1C"/>
-      <text x="40" y="44" font-size="10" font-weight="800" fill="#E84B3C" letter-spacing="0.08em">PHASE 0</text>
-      <text x="40" y="62" font-size="14" font-weight="700" fill="#fff">Audit</text>
-      <text x="40" y="78" font-size="10" fill="#9CA3AF">Coverage blind-spot check</text>
-
-      <!-- Arrow 0→1 -->
-      <line x1="240" y1="56" x2="276" y2="56" stroke="#E84B3C" stroke-width="2" marker-end="url(#arr)"/>
-
       <!-- Phase 1: LEARN -->
-      <rect x="280" y="20" width="220" height="72" rx="12" fill="#1C1C2C"/>
-      <text x="300" y="44" font-size="10" font-weight="800" fill="#E84B3C" letter-spacing="0.08em">PHASE 1</text>
-      <text x="300" y="62" font-size="14" font-weight="700" fill="#fff">Learn</text>
-      <text x="300" y="78" font-size="10" fill="#9CA3AF">Process votes + feedback</text>
+      <rect x="20" y="20" width="220" height="72" rx="12" fill="#1C1C2C"/>
+      <text x="40" y="44" font-size="10" font-weight="800" fill="#E84B3C" letter-spacing="0.08em">PHASE 1</text>
+      <text x="40" y="62" font-size="14" font-weight="700" fill="#fff">Learn</text>
+      <text x="40" y="78" font-size="10" fill="#9CA3AF">Process votes + feedback</text>
 
       <!-- Arrow 1→2 -->
-      <line x1="500" y1="56" x2="536" y2="56" stroke="#E84B3C" stroke-width="2" marker-end="url(#arr)"/>
+      <line x1="240" y1="56" x2="276" y2="56" stroke="#E84B3C" stroke-width="2" marker-end="url(#arr)"/>
 
       <!-- Phase 2: STRATEGISE -->
-      <rect x="540" y="20" width="200" height="72" rx="12" fill="#1C1C2C"/>
-      <text x="560" y="44" font-size="10" font-weight="800" fill="#E84B3C" letter-spacing="0.08em">PHASE 2</text>
-      <text x="560" y="62" font-size="14" font-weight="700" fill="#fff">Strategise</text>
-      <text x="560" y="78" font-size="10" fill="#9CA3AF">Update thesis.md</text>
+      <rect x="280" y="20" width="220" height="72" rx="12" fill="#1C1C2C"/>
+      <text x="300" y="44" font-size="10" font-weight="800" fill="#E84B3C" letter-spacing="0.08em">PHASE 2</text>
+      <text x="300" y="62" font-size="14" font-weight="700" fill="#fff">Strategise</text>
+      <text x="300" y="78" font-size="10" fill="#9CA3AF">Update thesis.md</text>
 
-      <!-- Arrow 2→3 (drops down) -->
-      <path d="M 640 92 L 640 124" stroke="#E84B3C" stroke-width="2" marker-end="url(#arr)"/>
+      <!-- Arrow 2→3 -->
+      <line x1="500" y1="56" x2="536" y2="56" stroke="#E84B3C" stroke-width="2" marker-end="url(#arr)"/>
 
       <!-- Phase 3: ARM -->
-      <rect x="540" y="128" width="200" height="72" rx="12" fill="#1C1C2C"/>
-      <text x="560" y="152" font-size="10" font-weight="800" fill="#E84B3C" letter-spacing="0.08em">PHASE 3</text>
-      <text x="560" y="170" font-size="14" font-weight="700" fill="#fff">Arm</text>
-      <text x="560" y="186" font-size="10" fill="#9CA3AF">Regenerate 250 search queries</text>
+      <rect x="540" y="20" width="200" height="72" rx="12" fill="#1C1C2C"/>
+      <text x="560" y="44" font-size="10" font-weight="800" fill="#E84B3C" letter-spacing="0.08em">PHASE 3</text>
+      <text x="560" y="62" font-size="14" font-weight="700" fill="#fff">Arm</text>
+      <text x="560" y="78" font-size="10" fill="#9CA3AF">Regenerate search terms</text>
 
-      <!-- Arrow 3→4 (goes left) -->
-      <line x1="540" y1="164" x2="504" y2="164" stroke="#E84B3C" stroke-width="2" marker-end="url(#arr)"/>
+      <!-- Arrow 3→4 (drops down) -->
+      <path d="M 640 92 L 640 124" stroke="#E84B3C" stroke-width="2" marker-end="url(#arr)"/>
 
       <!-- Phase 4: SCOUT -->
-      <rect x="280" y="128" width="220" height="72" rx="12" fill="#1C1C2C"/>
-      <text x="300" y="152" font-size="10" font-weight="800" fill="#E84B3C" letter-spacing="0.08em">PHASE 4</text>
-      <text x="300" y="170" font-size="14" font-weight="700" fill="#fff">Scout</text>
-      <text x="300" y="186" font-size="10" fill="#9CA3AF">Web scan + score + briefing</text>
+      <rect x="540" y="128" width="200" height="72" rx="12" fill="#1C1C2C"/>
+      <text x="560" y="152" font-size="10" font-weight="800" fill="#E84B3C" letter-spacing="0.08em">PHASE 4</text>
+      <text x="560" y="170" font-size="14" font-weight="700" fill="#fff">Scout</text>
+      <text x="560" y="186" font-size="10" fill="#9CA3AF">Web scan + score + briefing</text>
 
       <!-- Arrow 4→5 (goes left) -->
-      <line x1="280" y1="164" x2="244" y2="164" stroke="#E84B3C" stroke-width="2" marker-end="url(#arr)"/>
+      <line x1="540" y1="164" x2="504" y2="164" stroke="#E84B3C" stroke-width="2" marker-end="url(#arr)"/>
 
       <!-- Phase 5: PUBLISH -->
-      <rect x="20" y="128" width="220" height="72" rx="12" fill="#1C1C2C"/>
-      <text x="40" y="152" font-size="10" font-weight="800" fill="#E84B3C" letter-spacing="0.08em">PHASE 5</text>
-      <text x="40" y="170" font-size="14" font-weight="700" fill="#fff">Publish</text>
-      <text x="40" y="186" font-size="10" fill="#9CA3AF">Push to site via Workers</text>
+      <rect x="280" y="128" width="220" height="72" rx="12" fill="#1C1C2C"/>
+      <text x="300" y="152" font-size="10" font-weight="800" fill="#E84B3C" letter-spacing="0.08em">PHASE 5</text>
+      <text x="300" y="170" font-size="14" font-weight="700" fill="#fff">Publish</text>
+      <text x="300" y="186" font-size="10" fill="#9CA3AF">Push to GitHub Pages</text>
 
-      <!-- Arrow 5→6 (drops down) -->
-      <path d="M 130 200 L 130 232" stroke="#E84B3C" stroke-width="2" marker-end="url(#arr)"/>
+      <!-- Arrow 5→6 (goes left) -->
+      <line x1="280" y1="164" x2="244" y2="164" stroke="#E84B3C" stroke-width="2" marker-end="url(#arr)"/>
 
       <!-- Phase 6: REPORT -->
-      <rect x="20" y="236" width="720" height="56" rx="12" fill="#1C1C2C"/>
-      <text x="40" y="256" font-size="10" font-weight="800" fill="#E84B3C" letter-spacing="0.08em">PHASE 6</text>
-      <text x="40" y="272" font-size="14" font-weight="700" fill="#fff">Report</text>
-      <text x="200" y="268" font-size="10" fill="#9CA3AF">Append to discovery log — what worked, what was noise, what shifted</text>
+      <rect x="20" y="128" width="220" height="72" rx="12" fill="#1C1C2C"/>
+      <text x="40" y="152" font-size="10" font-weight="800" fill="#E84B3C" letter-spacing="0.08em">PHASE 6</text>
+      <text x="40" y="170" font-size="14" font-weight="700" fill="#fff">Report</text>
+      <text x="40" y="186" font-size="10" fill="#9CA3AF">Append to discovery log</text>
 
       <!-- Feedback loop arrow from Report back to Human -->
-      <path d="M 380 292 L 380 310" stroke="#E84B3C" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arr)"/>
+      <path d="M 130 200 L 130 240" stroke="#E84B3C" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arr)"/>
 
       <!-- Human node -->
-      <rect x="20" y="314" width="720" height="56" rx="12" fill="#E84B3C"/>
-      <text x="380" y="338" text-anchor="middle" font-size="10" font-weight="700" fill="rgba(255,255,255,0.7)" letter-spacing="0.08em">HUMAN JUDGMENT</text>
-      <text x="380" y="356" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">Vote on startups + Leave strategic feedback + Flag for follow-up</text>
+      <rect x="20" y="244" width="720" height="56" rx="12" fill="#E84B3C"/>
+      <text x="380" y="268" text-anchor="middle" font-size="10" font-weight="700" fill="rgba(255,255,255,0.7)" letter-spacing="0.08em">HUMAN JUDGMENT</text>
+      <text x="380" y="286" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">Vote on startups + Leave strategic feedback + Flag for follow-up</text>
 
-      <!-- Loop-back arrow from Human to Phase 0 -->
-      <path d="M 380 370 L 380 410 L 8 410 L 8 56 L 20 56" fill="none" stroke="#E84B3C" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arr)"/>
-      <text x="16" y="430" font-size="10" font-weight="600" fill="#6B7280">Next cycle starts with fresh human signals</text>
+      <!-- Loop-back arrow from Human to Phase 1 -->
+      <path d="M 380 300 L 380 340 L 8 340 L 8 56 L 20 56" fill="none" stroke="#E84B3C" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arr)"/>
+      <text x="16" y="360" font-size="10" font-weight="600" fill="#6B7280">Next cycle starts with fresh human signals</text>
 
-      <!-- Knowledge base files -->
-      <rect x="20" y="448" width="720" height="80" rx="12" fill="#F3F4F6" stroke="#E5E8EE" stroke-width="1"/>
-      <text x="40" y="470" font-size="10" font-weight="700" fill="#9CA3AF" letter-spacing="0.1em">SHARED KNOWLEDGE BASE — READ AND WRITTEN BY EVERY PHASE</text>
+      <!-- Knowledge base files (right side annotation) -->
+      <rect x="20" y="400" width="720" height="120" rx="12" fill="#F3F4F6" stroke="#E5E8EE" stroke-width="1"/>
+      <text x="40" y="424" font-size="10" font-weight="700" fill="#9CA3AF" letter-spacing="0.1em">SHARED KNOWLEDGE BASE — READ AND WRITTEN BY EVERY PHASE</text>
 
-      <rect x="40" y="482" width="120" height="28" rx="6" fill="#fff" stroke="#E5E8EE"/>
-      <text x="100" y="500" text-anchor="middle" font-size="9" font-weight="600" fill="#374151">thesis.md</text>
+      <rect x="40" y="440" width="120" height="32" rx="6" fill="#fff" stroke="#E5E8EE"/>
+      <text x="100" y="460" text-anchor="middle" font-size="10" font-weight="600" fill="#374151">thesis.md</text>
 
-      <rect x="172" y="482" width="120" height="28" rx="6" fill="#fff" stroke="#E5E8EE"/>
-      <text x="232" y="500" text-anchor="middle" font-size="9" font-weight="600" fill="#374151">preferences.md</text>
+      <rect x="172" y="440" width="120" height="32" rx="6" fill="#fff" stroke="#E5E8EE"/>
+      <text x="232" y="460" text-anchor="middle" font-size="10" font-weight="600" fill="#374151">preferences.md</text>
 
-      <rect x="304" y="482" width="130" height="28" rx="6" fill="#fff" stroke="#E5E8EE"/>
-      <text x="369" y="500" text-anchor="middle" font-size="9" font-weight="600" fill="#374151">search-terms.md</text>
+      <rect x="304" y="440" width="140" height="32" rx="6" fill="#fff" stroke="#E5E8EE"/>
+      <text x="374" y="460" text-anchor="middle" font-size="10" font-weight="600" fill="#374151">search-terms.md</text>
 
-      <rect x="446" y="482" width="130" height="28" rx="6" fill="#fff" stroke="#E5E8EE"/>
-      <text x="511" y="500" text-anchor="middle" font-size="9" font-weight="600" fill="#374151">near-misses.md</text>
+      <rect x="456" y="440" width="130" height="32" rx="6" fill="#fff" stroke="#E5E8EE"/>
+      <text x="521" y="460" text-anchor="middle" font-size="10" font-weight="600" fill="#374151">near-misses.md</text>
 
-      <rect x="588" y="482" width="140" height="28" rx="6" fill="#fff" stroke="#E5E8EE"/>
-      <text x="658" y="500" text-anchor="middle" font-size="9" font-weight="600" fill="#374151">discovery-log.md</text>
+      <rect x="598" y="440" width="130" height="32" rx="6" fill="#fff" stroke="#E5E8EE"/>
+      <text x="663" y="460" text-anchor="middle" font-size="10" font-weight="600" fill="#374151">discovery-log.md</text>
+
+      <text x="380" y="500" text-anchor="middle" font-size="10" fill="#9CA3AF">All files are plain markdown — human-readable, agent-writable, git-versioned</text>
     </svg>
-    <div class="diagram-caption">The full pipeline. Seven phases in strict order, closing the loop through human judgment.</div>
+    <div class="diagram-caption">The full pipeline. Six phases in strict order, closing the loop through human judgment.</div>
   </div>
-
-  <h3>Why strict ordering matters</h3>
-  <p>Earlier versions of the system ran each agent on an independent schedule — the radar might fire at 6:30am while the thesis was last updated on Tuesday. Search terms could be days stale. The orchestrated pipeline eliminates this: <strong>Phase 0</strong> (Audit) checks coverage across all 20 gap categories and flags blind spots. <strong>Phase 1</strong> (Learn) processes every accumulated vote and piece of feedback. <strong>Phase 2</strong> (Strategise) updates the thesis using that fresh preference data. <strong>Phase 3</strong> (Arm) regenerates all 250 search queries from the updated thesis. <strong>Phase 4</strong> (Scout) runs the radar with those fresh queries, prioritising categories the audit flagged as underrepresented. <strong>Phase 5</strong> (Publish) pushes everything live. <strong>Phase 6</strong> (Report) logs what happened. Each phase's output is the next phase's input — nothing runs with stale data.</p>
 
   <p>The human reviews the published results, votes, leaves feedback. The next cycle starts with those fresh signals. The loop closes — and the system converges.</p>
 </div>
@@ -488,17 +478,17 @@ body {
      ════════════════════════════════════════════ -->
 <div class="section">
   <div class="section-number">04 — The Search Engine</div>
-  <h2>250 queries that rewrite themselves</h2>
+  <h2>160 queries that rewrite themselves</h2>
   <p>Most scouting tools use fixed search terms. Bene Gesserit generates its own. The Search Terms Agent reads the current thesis and produces a structured query set — organised by gap category, tagged by priority, and complete with negative filters to exclude noise.</p>
 
   <div class="stat-row">
     <div class="stat-cell">
       <div class="stat-label">Search queries</div>
-      <div class="stat-value">250</div>
+      <div class="stat-value">160</div>
     </div>
     <div class="stat-cell">
       <div class="stat-label">Gap categories</div>
-      <div class="stat-value">20</div>
+      <div class="stat-value">12</div>
     </div>
     <div class="stat-cell">
       <div class="stat-label">Scan frequency</div>
@@ -514,79 +504,18 @@ body {
 
   <p>Each category has a priority level that determines scan frequency. Critical categories are searched every scan. High-priority categories every other scan. Medium categories weekly. Monitor categories bi-weekly. This ensures the system concentrates effort where signal density is highest.</p>
 
-  <h3 style="margin-top:28px;margin-bottom:6px;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#9CA3AF;">Specialist Agents — Primary scouting focus</h3>
-  <p style="font-size:0.92rem;margin-bottom:16px;">These are the agents that make the platform worth using — the ones that serve end-users directly. Nine categories mapping to how elite traders actually work, from pre-trade research through post-trade analysis.</p>
-  <div class="cat-grid">
-    <div class="cat-card">
-      <div class="cat-num">S1</div>
-      <div class="cat-name">Research & Signal Intelligence</div>
-      <div class="cat-desc">Autonomous investment research, narrative detection, alternative data mining.</div>
-      <span class="cat-badge every">Every scan</span>
-    </div>
-    <div class="cat-card">
-      <div class="cat-num">S2</div>
-      <div class="cat-name">Portfolio Construction & Risk</div>
-      <div class="cat-desc">Allocation, rebalancing, risk modelling, scenario analysis.</div>
-      <span class="cat-badge every">Every scan</span>
-    </div>
-    <div class="cat-card">
-      <div class="cat-num">S3</div>
-      <div class="cat-name">Trade Structuring</div>
-      <div class="cat-desc">Multi-leg trade design, cross-asset structuring, margin optimisation.</div>
-      <span class="cat-badge high">High</span>
-    </div>
-    <div class="cat-card">
-      <div class="cat-num">S4</div>
-      <div class="cat-name">Options & Derivatives Strategy</div>
-      <div class="cat-desc">Greeks analysis, volatility surface mapping, strategy recommendation.</div>
-      <span class="cat-badge high">High</span>
-    </div>
-    <div class="cat-card">
-      <div class="cat-num">S5</div>
-      <div class="cat-name">Execution Quality</div>
-      <div class="cat-desc">Best-execution routing, market impact minimisation, TCA.</div>
-      <span class="cat-badge high">High</span>
-    </div>
-    <div class="cat-card">
-      <div class="cat-num">S6</div>
-      <div class="cat-name">Position Monitoring</div>
-      <div class="cat-desc">Real-time P&L, exposure tracking, alert generation, drift detection.</div>
-      <span class="cat-badge high">High</span>
-    </div>
-    <div class="cat-card">
-      <div class="cat-num">S7</div>
-      <div class="cat-name">Financial Planning</div>
-      <div class="cat-desc">Goal-based planning, retirement modelling, cash flow projections.</div>
-      <span class="cat-badge medium">Medium</span>
-    </div>
-    <div class="cat-card">
-      <div class="cat-num">S8</div>
-      <div class="cat-name">Behavioural Coaching</div>
-      <div class="cat-desc">Bias detection, decision journaling, commitment devices.</div>
-      <span class="cat-badge medium">Medium</span>
-    </div>
-    <div class="cat-card">
-      <div class="cat-num">S9</div>
-      <div class="cat-name">Post-Trade Analysis</div>
-      <div class="cat-desc">Attribution, trade journaling, performance decomposition.</div>
-      <span class="cat-badge medium">Medium</span>
-    </div>
-  </div>
-
-  <h3 style="margin-top:28px;margin-bottom:6px;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#9CA3AF;">Platform Infrastructure — Supporting layer</h3>
-  <p style="font-size:0.92rem;margin-bottom:16px;">The infrastructure that specialist agents connect to — authentication, safety, compliance, payments. Well-covered in the pipeline; priority now shifts to maintaining awareness rather than active expansion.</p>
   <div class="cat-grid">
     <div class="cat-card">
       <div class="cat-num">01</div>
       <div class="cat-name">Personal Financial Agent</div>
       <div class="cat-desc">Front-door agents that understand customer goals and orchestrate specialist conversations.</div>
-      <span class="cat-badge medium">Medium</span>
+      <span class="cat-badge every">Every scan</span>
     </div>
     <div class="cat-card">
       <div class="cat-num">02</div>
       <div class="cat-name">Pre-Trade Compliance</div>
       <div class="cat-desc">Suitability checks, concentration limits, restricted lists — the gate before execution.</div>
-      <span class="cat-badge medium">Medium</span>
+      <span class="cat-badge every">Every scan</span>
     </div>
     <div class="cat-card">
       <div class="cat-num">03</div>
@@ -598,19 +527,19 @@ body {
       <div class="cat-num">04</div>
       <div class="cat-name">Agent Orchestration</div>
       <div class="cat-desc">Multi-agent workflow routing, scheduling, and governance for financial services.</div>
-      <span class="cat-badge monitor">Monitor</span>
+      <span class="cat-badge medium">Medium</span>
     </div>
     <div class="cat-card">
       <div class="cat-num">05</div>
       <div class="cat-name">AI Safety & Guardrails</div>
       <div class="cat-desc">Agent behaviour supervision, hallucination prevention, boundary enforcement.</div>
-      <span class="cat-badge medium">Medium</span>
+      <span class="cat-badge high">High</span>
     </div>
     <div class="cat-card">
       <div class="cat-num">06</div>
       <div class="cat-name">Agent Auth & Identity</div>
       <div class="cat-desc">Know Your Agent — permissions, secrets, identity delegation for non-human actors.</div>
-      <span class="cat-badge medium">Medium</span>
+      <span class="cat-badge every">Every scan</span>
     </div>
     <div class="cat-card">
       <div class="cat-num">07</div>
@@ -620,9 +549,9 @@ body {
     </div>
     <div class="cat-card">
       <div class="cat-num">08</div>
-      <div class="cat-name">Dispute Resolution & Liability</div>
-      <div class="cat-desc">Agent liability, insurance, certification, and accountability frameworks.</div>
-      <span class="cat-badge high">High</span>
+      <div class="cat-name">Agent Memory & Context</div>
+      <div class="cat-desc">Persistent state, cross-session context, and consent-managed data sharing.</div>
+      <span class="cat-badge medium">Medium</span>
     </div>
     <div class="cat-card">
       <div class="cat-num">09</div>
@@ -632,6 +561,18 @@ body {
     </div>
     <div class="cat-card">
       <div class="cat-num">10</div>
+      <div class="cat-name">Dispute Resolution</div>
+      <div class="cat-desc">Agent liability, insurance, certification, and accountability frameworks.</div>
+      <span class="cat-badge medium">Medium</span>
+    </div>
+    <div class="cat-card">
+      <div class="cat-num">11</div>
+      <div class="cat-name">Agentic Commerce</div>
+      <div class="cat-desc">Middleware connecting product catalogues to LLM conversations.</div>
+      <span class="cat-badge monitor">Monitor</span>
+    </div>
+    <div class="cat-card">
+      <div class="cat-num">12</div>
       <div class="cat-name">Agent Monetisation</div>
       <div class="cat-desc">Results-based billing and pricing infrastructure for agent-mediated services.</div>
       <span class="cat-badge monitor">Monitor</span>
@@ -646,13 +587,8 @@ body {
      ════════════════════════════════════════════ -->
 <div class="section">
   <div class="section-number">05 — The Learning System</div>
-  <h2>Every vote teaches the system something</h2>
+  <h2>Every vote teaches the model something</h2>
   <p>This is the heart of what makes Bene Gesserit different from a search tool. The system maintains three learning mechanisms that turn human judgments into scoring improvements.</p>
-
-  <div class="callout">
-    <div class="callout-label">This is not machine learning</div>
-    <p style="margin:0">There are no neural networks, no gradient descent, no training runs, no embeddings. The system learns through structured rules that Claude applies to plain-text documents. When you vote 5 stars on an agent authentication startup, the system writes a human-readable preference rule in <code>preferences.md</code>: "Agent Authentication — strong positive signal, +15 points." When you downvote a tax-filing company, it writes a negative filter: "Tax Optimisation — exclude tax-filing, tax-preparation, bookkeeping-automation." Every learned preference is a sentence you can read, edit, or override. The intelligence isn't in a model — it's in a document that evolves with each judgment. The LLM is the reasoning engine that reads these documents and applies them, not the thing being trained.</p>
-  </div>
 
   <h3>Preference learning</h3>
   <p>Every vote (1-5 stars) updates a <code>preferences.md</code> file — a structured record of what the system has learned about the decision-maker's tastes. Upvotes generate positive signals with point bonuses. Downvotes generate negative signals with point penalties. Neutral votes are tracked as ambiguous signals requiring further calibration. The preferences file feeds directly into the scoring algorithm — startups in subsequent scans are scored against these learned preferences, not just against the static thesis.</p>
@@ -732,7 +668,7 @@ body {
     </div>
     <div class="stat-cell">
       <div class="stat-label">Gap categories</div>
-      <div class="stat-value">20</div>
+      <div class="stat-value">12</div>
     </div>
     <div class="stat-cell">
       <div class="stat-label">Votes cast</div>
@@ -781,7 +717,7 @@ body {
     <div class="stack-item">
       <div class="si-label">AI Engine</div>
       <div class="si-name">Claude</div>
-      <div class="si-desc">Powers all seven phases. Thesis review, search term generation, radar scanning, scoring, preference learning, and reporting all run as structured prompts against a shared knowledge base. No fine-tuning, no training — the LLM reads evolving documents and applies rules written in natural language.</div>
+      <div class="si-desc">Powers all six phases. Thesis review, search term generation, radar scanning, scoring, preference learning, and reporting all run as structured prompts against a shared knowledge base.</div>
     </div>
     <div class="stack-item">
       <div class="si-label">Data Layer</div>
@@ -806,7 +742,7 @@ body {
     <div class="stack-item">
       <div class="si-label">Orchestration</div>
       <div class="si-name">Scheduled Tasks</div>
-      <div class="si-desc">A single master task — <code>bg-full-cycle</code> — runs all seven phases in strict dependency order: Audit → Learn → Strategise → Arm → Scout → Publish → Report. No phase starts until its predecessor completes.</div>
+      <div class="si-desc">A single master task — <code>bg-full-cycle</code> — runs all six phases in strict dependency order: Learn → Strategise → Arm → Scout → Publish → Report. No phase starts until its predecessor completes.</div>
     </div>
   </div>
 
@@ -818,33 +754,33 @@ body {
      ════════════════════════════════════════════ -->
 <div class="section">
   <div class="section-number">09 — What It Learned</div>
-  <h2>From 56 votes, the system extracted this</h2>
-  <p>Bene Gesserit has been running for six weeks. In that time, the decision-maker cast 56 votes — 19 upvotes, 8 neutrals, 29 downvotes. From those data points, the system extracted a compounding amount of signal — and exposed its own structural biases.</p>
+  <h2>From 8 votes, the system extracted this</h2>
+  <p>Bene Gesserit has been running for five weeks. In that time, the decision-maker cast 8 votes — 4 upvotes, 2 downvotes, 2 neutrals. From those 8 data points, the system extracted a surprising amount of signal.</p>
 
   <div class="timeline">
     <div class="timeline-item">
-      <div class="timeline-date">Exposure bias detected</div>
-      <div class="timeline-text">Agent Authentication and AI Safety had a 100% upvote rate — but the system discovered this was <strong>availability bias</strong>, not strategic priority. These categories dominated the pipeline because the search terms favoured them, creating a feedback loop: more results → more votes → higher preference scores → even more results. The system learned to normalise hit rates against exposure, breaking the cycle.</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-date">Strategic rebalance</div>
-      <div class="timeline-text">The thesis describes 14 stages of how elite traders work, mapping to 11 specialist agent types — but 9 of those had <strong>zero pipeline coverage</strong>. The system was flooding the pipeline with infrastructure companies while ignoring the specialist agents that make the platform worth using. A Phase 0 coverage audit now runs at the start of every cycle, flagging blind spots before any scanning begins.</div>
+      <div class="timeline-date">Strong positive</div>
+      <div class="timeline-text"><strong>Agent Authentication & AI Safety</strong> have a 100% upvote rate (4/4 at 4-5 stars). The system learned that the decision-maker's strongest preference is for infrastructure-layer trust technology — products that other agents connect <em>to</em>, not products that use agents to do tasks.</div>
     </div>
     <div class="timeline-item">
       <div class="timeline-date">Sub-domain precision</div>
-      <div class="timeline-text">Downvotes revealed a consistent pattern: right category, wrong product type. "Tax Optimisation" matched tax-filing apps when the preference is portfolio-integrated intelligence. "Agent Orchestration" matched accounting automation. The system learned to write negative filters — not just what to search for, but what to exclude.</div>
+      <div class="timeline-text">Both downvotes revealed the same pattern: right category, wrong product type. "Agent Orchestration" matched an accounting automation tool. "Tax Optimisation" matched a tax-filing app. The system learned to distinguish sub-domains within gaps — and added negative filters to prevent re-surfacing these types.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">Dual failure modes</div>
+      <div class="timeline-text">Two neutral votes in the Compliance category revealed two distinct failure paths: wrong sub-domain (KYC/AML framing when the preference is AI governance) and undifferentiated execution (correct framing but no architectural moat). The system now tracks these as separate blind spots.</div>
     </div>
     <div class="timeline-item">
       <div class="timeline-date">Scope expansion</div>
-      <div class="timeline-text">The system started with 6 gap categories and 50 search queries. After learning from radar results, votes, and a strategic rebalance, it expanded to 20 categories and 250 queries — quadrupling its search surface. The expansion immediately found companies in categories that had been structurally invisible.</div>
+      <div class="timeline-text">The system started with 6 gap categories and 50 search queries. After learning from radar results and drift analysis, it expanded to 12 categories and 160 queries — doubling its search surface and immediately finding companies in previously uncovered areas.</div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-date">Self-correction</div>
-      <div class="timeline-text">The system caught its own structural failure. By tracking coverage per category rather than just scoring accuracy, it detected that 12 of 20 thesis categories had zero pipeline companies. It now auto-elevates underrepresented categories to critical scan priority — preventing the system from endlessly deepening coverage in areas it already knows about.</div>
+      <div class="timeline-date">Self-awareness</div>
+      <div class="timeline-text">The system tracks its own data starvation. It knows that 91% of its pipeline is unvoted and explicitly recommends which specific votes would provide the highest marginal calibration value — acting as its own research advisor.</div>
     </div>
   </div>
 
-  <p>This is the recursive learning flywheel in action. Fifty-six votes produced dozens of scoring adjustments, search term refinements, negative filters, blind spot trackers, and a major strategic rebalance — each of which makes the next scan more precise. The system doesn't need thousands of data points because it treats each human judgment as a high-value signal and extracts maximum information from it.</p>
+  <p>This is the recursive learning flywheel in action. Eight votes produced dozens of scoring adjustments, search term refinements, negative filters, blind spot trackers, and thesis drift observations — each of which makes the next scan more precise. The system doesn't need thousands of data points because it treats each human judgment as a high-value signal and extracts maximum information from it.</p>
 </div>
 
 <!-- ════════════════════════════════════════════
